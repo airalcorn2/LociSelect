@@ -2,4 +2,4 @@ All of the parameters should be tuned in the source code. Don't be afraid... you
 
 To run:
 
-python lociSelect.py
+<code>python lociSelect.py</code>
