@@ -199,7 +199,6 @@ print("{0} loci found.\n".format(len(betterLoci)))
 
 print("Begin simulated annealing...")
 
-'''
 bestState = simulatedAnnealing(init, T, cool, iters, lociW, dataW, speciesW)
 print("\nSimulated annealing complete.")
 
@@ -207,13 +206,14 @@ scoreComps, missingCounts = getLociScore(bestState, lociW, dataW, speciesW)
 print("\nProportion of loci used in best discovered state: {0}".format(scoreComps[0] / lociW))
 print("Proportion of missing data in best discovered state: {0}".format(1.0 - scoreComps[1] / dataW))
 print("Average proportion of species represented per locus in current state: {0}".format(scoreComps[2] / speciesW))
+
 '''
-
-
+# Testing
 reader = csv.DictReader(open("parameters.csv"))
 output = open("results.csv", "w")
 fieldnames = reader.fieldnames + ["score", "loci", "data", "species"]
 writer = csv.DictWriter(output, fieldnames)
+writer.writeheader()
 
 start = time.time()
 
@@ -236,3 +236,4 @@ output.close()
 end = time.time()
 
 print("Total time: {0} s".format(end - start))
+'''
