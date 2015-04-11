@@ -173,6 +173,7 @@ def simulatedAnnealing(init, temp, cool, iters, lociW, dataW, speciesW):
 
 # Parameters
 filename = "alpheus_c2.loci"
+cutoff = 4 # Only consider loci with at least "cutoff" species.
 init = 0.5 # Must be between 0 and 1.
 T = 0.1
 cool = 0.999 # Must be between 0 and 1.
@@ -192,7 +193,6 @@ totalSpecies = len(speciesCounts.keys())
 print("{0} different species found.\n".format(totalSpecies))
 proportions = {species: float(speciesCounts[species]) / float(totalIndividuals) for species in speciesCounts.keys()}
 
-cutoff = 4
 print("Selecting loci with at least {0} individuals...".format(cutoff))
 betterLoci = getBetterLoci(filename, cutoff)
 print("{0} loci found.\n".format(len(betterLoci)))
