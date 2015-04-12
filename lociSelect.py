@@ -68,7 +68,7 @@ def getBetterLoci(filename, cutoff):
 
 
 # Scoring function with user-specified weights. Includes three components:
-# 1. The proportion of loci from the original data set included (higher is better). (weight = "lociW")
+# 1. The included proportion of loci from the original data set (higher is better). (weight = "lociW")
 # 2. 1 - the proportion of missing data for the selected loci (higher is better). (weight = "dataW")
 # 3. The average proportion of species represented per locus (higher is better). (weight = "speciesW")
 def getLociScore(state, lociW, dataW, speciesW):
