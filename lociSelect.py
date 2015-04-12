@@ -73,7 +73,7 @@ def getBetterLoci(filename, cutoff):
 # 3. The average proportion of species represented per locus (higher is better). (weight = "speciesW")
 def getLociScore(state, lociW, dataW, speciesW):
     
-    global loci, betterLoci, speciesCounts, totalIndividuals, totalSpecies, individuals
+    global betterLoci, speciesCounts, totalIndividuals, totalSpecies, individuals
     
     numLoci = sum(state)
     speciesLociCounts = {species: 0 for species in speciesCounts.keys()}
@@ -105,6 +105,7 @@ def getLociScore(state, lociW, dataW, speciesW):
         for species in foundSpecies:
             speciesLociCounts[species] += 1
         
+        # Keep track of the amount of missing data for each individual.
         for individual in individuals:
             if individual not in foundIndividauals:
                 missingCounts[individual] += 1
