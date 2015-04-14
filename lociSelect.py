@@ -208,6 +208,12 @@ print("\nProportion of loci used in best discovered state: {0}".format(scoreComp
 print("Proportion of missing data in best discovered state: {0}".format(1.0 - scoreComps[1] / dataW))
 print("Average proportion of species represented per locus in current state: {0}".format(scoreComps[2] / speciesW))
 
+output = open("selected_loci.txt", "w")
+
+for i in range(len(betterLoci)):
+    if betterLoci[i]:
+        output.write(str(i) + "\n")
+
 '''
 # Testing
 reader = csv.DictReader(open("parameters.csv"))
