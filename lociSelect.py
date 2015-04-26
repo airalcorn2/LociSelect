@@ -118,7 +118,7 @@ def getLociScore(state, lociW, dataW, speciesW):
     return scoreComps, missingCounts
 
 
-# Performs simulated annealing algorithm.
+# Performs the simulated annealing algorithm.
 # "init" specifies the proportion of loci to randomly select for the initial state.
 #       For example, 0.5 would randomly select approximately 50% of loci for the initial state.
 # "temp" is the initial temperature for the algorithm and "cool" is the cooling rate.
